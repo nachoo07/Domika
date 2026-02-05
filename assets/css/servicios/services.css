@@ -25,7 +25,8 @@
 
 .services {
   padding: 6rem 2rem;
-  background: #f9dce1
+  background: #f9dce1;
+  overflow: hidden;
 ; /* verde oscuro Domika */
 }
 

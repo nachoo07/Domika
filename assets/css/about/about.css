@@ -1,36 +1,43 @@
-/* ===============================
-   ABOUT — IMAGEN EDITORIAL
-=============================== */
+/* css/about/about.css */
 
 .about-fullimg {
   position: relative;
-  max-width: none;
-  width: 100vw;
-  margin-left: calc(-1 * ((100vw - 100%) / 2));
-  margin-right: calc(-1 * ((100vw - 100%) / 2));
+  width: 100vw;          /* Ancho total de la ventana */
   height: 90vh;
-  overflow: hidden;
+  
+  /* La técnica infalible para centrar secciones full-width */
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  max-width: none;       /* Ignoramos el límite del contenedor padre */
+  
+  overflow: hidden;      /* Cortamos cualquier sobrante por seguridad */
+}
+
+/* Aseguramos que la etiqueta <picture> no genere espacios extra */
+.about-fullimg picture {
+  display: block;
+  width: 100%;
+  height: 100%;
 }
 
 /* Imagen real */
 .img-about {
-  position: relative;
-  z-index: 2;
+  display: block;
   width: 100%;
   height: 100%;
-  margin: 0;
-  display: block;
-  object-fit: cover;
+  object-fit: cover;     /* Mantiene la proporción sin deformar */
+  object-position: center;
 }
 
+/* Ajustes Mobile */
 @media (max-width: 600px) {
   .about-fullimg {
-    height: 100vh;
+    height: 100vh;       /* En celular ocupa toda la pantalla */
   }
 
   .img-about {
-    width: 100%;
-    height: 100vh;
-    object-fit: fill; /* se estira a propósito */
+    object-fit: fill;   /* 'cover' suele verse mejor que 'fill' (estirado) en móviles modernos, pero puedes dejar fill si prefieres */
   }
 }

@@ -95,5 +95,23 @@
   .footer-bottom {
     font-size: 1.3rem !important;
   }
+
+  .footer {
+    padding: 4rem 1.5rem 2rem; /* Reducir padding superior y lateral */
+  }
+
+  .footer-inner {
+    display: flex;       /* Cambiar grid por flex column */
+    flex-direction: column;
+    gap: 3rem;
+    text-align: center;  /* Centrar textos del footer */
+  }
+  
+  .footer-contact ul li {
+     /* Asegura que los items estén centrados o alineados a la izquierda según prefieras */
+     display: flex;
+     flex-direction: column;
+     align-items: center; 
+  }
 }
 
