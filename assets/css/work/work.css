@@ -1,0 +1,150 @@
+
+/* ===============================
+   WORK — EDITORIAL TETRIS (SAFE)
+=============================== */
+
+.work {
+  padding: 4rem 2rem;
+  background: #F4F1EC;
+}
+
+/* ===============================
+   WORK HEADER — MANIFIESTO
+=============================== */
+
+.work-header {
+  width: 100%;
+  margin-bottom: 5rem;
+}
+
+.work-header h2 {
+  font-family: var(--font-title);
+  font-size: clamp(4rem, 9vw, 7rem);
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+  margin-bottom: 2rem;
+  color: var(--domika-black);
+  max-width: 1100px;
+}
+
+/* línea editorial desplazada */
+
+
+/* GRID */
+
+.work-grid {
+  column-count: 4;
+  column-gap: 0.8rem;
+}
+
+/* ITEMS */
+
+.work-item {
+  background: #f3f3f3;
+  border-radius: 0.6rem;
+  padding: 0.25rem;
+  overflow: hidden;
+  break-inside: avoid;
+  margin-bottom: 0.7rem;
+}
+
+/* MEDIA — CLAVE */
+
+.work-item img,
+.work-item video {
+  width: 100%;
+  display: block;
+  object-fit: contain;
+  transition: transform 0.35s ease, filter 0.35s ease;
+}
+
+.work-item:hover img,
+.work-item:hover video {
+  transform: scale(1.1);
+  filter: blur(2px) brightness(0.75);
+}
+
+/* ===============================
+   WORK — TITLE OVERLAY (HOVER)
+=============================== */
+
+.work-item {
+  position: relative;
+}
+
+.work-media {
+  position: relative;
+  overflow: hidden;
+}
+
+.work-title {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-title);
+  font-size: 1.5rem;
+  letter-spacing: 0.06em;
+  color: #fff;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s ease;
+  background: rgba(0, 0, 0, 0.15);
+}
+
+.work-item:hover .work-title {
+  opacity: 1;
+}
+
+.work-show-more {
+  display: none;
+}
+
+/* Responsive */
+
+@media (max-width: 900px) {
+  .work-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .work-item.horizontal {
+    grid-column: span 2;
+    aspect-ratio: 16 / 9;
+  }
+}
+
+@media (max-width: 560px) {
+  .work-grid {
+    column-count: 1;
+  }
+
+  .work-title {
+    font-size: 3rem !important;
+  }
+
+    .work-more-items {
+    display: none;
+  }
+
+  .work-more-items.active {
+    display: contents;
+  }
+
+  .work-show-more {
+    display: block;
+    margin: 1rem auto;
+    padding: 1rem 2rem;
+    font-size: 1.5rem;
+    background: #fff;
+    color: #222;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  .work {
+    padding-bottom: 1rem !important;
+  }
+
+}
