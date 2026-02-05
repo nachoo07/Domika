@@ -52,8 +52,15 @@
 
 @media (max-width: 600px) {
   .nav {
-    padding-right: 0px !important;
+    padding: 10px !important;
   }
-
- 
+  .header {
+    width: 100vw;
+    left: 0;
+    right: 0;
+    overflow-x: hidden;
+  }
+  body {
+    overflow-x: hidden;
+  }
 }
