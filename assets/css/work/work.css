@@ -131,7 +131,9 @@
     display: contents;
   }
 
-  .work-show-more {
+
+  .work-show-more,
+  .work-show-less {
     display: block;
     margin: 1rem auto;
     padding: 1rem 2rem;
@@ -141,6 +143,17 @@
     border: 1px solid #ccc;
     border-radius: 4px;
     cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+  }
+
+  .work-show-more:hover,
+  .work-show-less:hover {
+    background: #222;
+    color: #fff;
+  }
+
+  .work-show-less {
+    display: none;
   }
 
   .work {

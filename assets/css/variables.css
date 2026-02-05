@@ -18,8 +18,8 @@
      DOMIKA — TIPOGRAFÍAS
   =============================== */
 
-  --font-title: 'Canela Condensed', serif;
-  --font-body: 'Poppins', sans-serif;
+  --font-title: 'Canela Condensed';
+  --font-body: 'Poppins';
 
   /* ===============================
      DOMIKA — ESCALA TIPOGRÁFICA
@@ -35,3 +35,6 @@
   --lh-normal: 1.6;
   --lh-relaxed: 1.75;
 }
+
+
+

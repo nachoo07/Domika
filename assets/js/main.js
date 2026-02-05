@@ -1,13 +1,94 @@
-// Mostrar más trabajos en móvil
+// Mostrar más/menos trabajos en móvil, cargando dinámicamente los extras
 document.addEventListener('DOMContentLoaded', function() {
-  var btn = document.querySelector('.work-show-more');
+  var btnMore = document.querySelector('.work-show-more');
+  var btnLess = document.querySelector('.work-show-less');
   var more = document.querySelector('.work-more-items');
-  if(btn && more) {
-    btn.addEventListener('click', function() {
-      more.classList.add('active');
-      btn.style.display = 'none';
-    });
+  var loaded = false;
+  var extraWorks = `
+    <article class="work-item square">
+      <img src="assets/img/works/PLACAS-10.webp" alt="Proyecto Domika">
+    </article>
+    <article class="work-item square">
+      <img src="assets/img/works/PLACAS-09 (1).webp" alt="Proyecto Domika">
+    </article>
+    <article class="work-item square">
+      <img src="assets/img/works/POSTS-03.webp" alt="Proyecto Domika">
+    </article>
+    <article class="work-item vertical">
+      <div class="work-media">
+        <video autoplay muted loop playsinline preload="none">
+          <source src="assets/videos/works/_ vivis al palo_ - alpalo .mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="work-title">Al palo</div>
+    </article>
+    <article class="work-item square">
+      <img src="assets/img/works/SEPTEMBER-38 - copia.webp" alt="Proyecto Domika">
+    </article>
+    <article class="work-item vertical">
+      <div class="work-media">
+        <video autoplay muted loop playsinline preload="none">
+          <source src="assets/videos/works/Tratamiento Despigmentante-balance  - Clinic.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="work-title">Clinic</div>
+    </article>
+    <article class="work-item square">
+      <img src="assets/img/works/WhatsApp Image 2025-04-25 at 21.26.49 (4).webp" alt="Proyecto Domika">
+    </article>
+    <article class="work-item square">
+      <img src="assets/img/works/WhatsApp Image 2025-04-28 at 15.22.24.webp" alt="Proyecto Domika">
+    </article>
+  `;
+  function isMobile() {
+    return window.matchMedia('(max-width: 900px)').matches;
   }
+  function showAllDesktop() {
+    if (more && !loaded) {
+      more.innerHTML = extraWorks;
+      more.classList.add('active');
+      if(btnMore) btnMore.style.display = 'none';
+      if(btnLess) btnLess.style.display = 'none';
+      loaded = true;
+    }
+  }
+  function setupMobile() {
+    if(btnMore && btnLess && more) {
+      btnMore.style.display = 'block';
+      btnLess.style.display = 'none';
+      more.classList.remove('active');
+      more.innerHTML = '';
+      loaded = false;
+      btnMore.addEventListener('click', function() {
+        if(!loaded) {
+          more.innerHTML = extraWorks;
+          loaded = true;
+        }
+        more.classList.add('active');
+        btnMore.style.display = 'none';
+        btnLess.style.display = 'block';
+      });
+      btnLess.addEventListener('click', function() {
+        more.classList.remove('active');
+        btnMore.style.display = 'block';
+        btnLess.style.display = 'none';
+        // Scroll hacia arriba para ver los primeros trabajos
+        const workSection = document.querySelector('.work');
+        if(workSection) {
+          workSection.scrollIntoView({behavior: 'smooth', block: 'start'});
+        }
+      });
+    }
+  }
+  function handleResize() {
+    if (isMobile()) {
+      setupMobile();
+    } else {
+      showAllDesktop();
+    }
+  }
+  handleResize();
+  window.addEventListener('resize', handleResize);
 });
 // Animación de aparición lateral para service-item
 document.addEventListener('DOMContentLoaded', function () {

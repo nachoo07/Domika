@@ -98,6 +98,7 @@ body {
   letter-spacing: 0.05em;
   transition: color 0.2s;
   line-height: 1.1;
+  font-family: var(--font-title);
 }
 .fullscreen-modal .modal-nav a.active,
 .fullscreen-modal .modal-nav a:hover {
@@ -157,19 +158,17 @@ body {
     display: none;
   }
 
-  .fullscreen-modal .modal-nav a {
-
-  font-size: 2rem ;
-
+.fullscreen-modal .modal-nav a {
+  font-size: 1.5rem ;
 }
 
 .modal-nav {
-  gap: 1.5rem;
-  padding-bottom: 70px !important;
+  padding-bottom: 30px !important;
+
 }
 
 .modal-info {
-  padding-bottom: 50px !important;
+  gap: 2rem;
 }
   
 }
