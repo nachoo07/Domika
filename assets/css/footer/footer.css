@@ -85,33 +85,39 @@
   .footer-cta h2 {
     font-size: clamp(2.2rem, 8vw, 3.2rem);
   }
-  .footer-cta p,
-  .footer-contact a {
-    font-size: 1rem !important;
-  }
-  .footer-contact span {
-    font-size: 1.1rem !important;
-  }
-  .footer-bottom {
-    font-size: 1.3rem !important;
+  .footer-cta p {
+    font-size: 0.95rem;
   }
 
   .footer {
-    padding: 4rem 1.5rem 2rem; /* Reducir padding superior y lateral */
+    padding: 4rem 1.25rem 2rem; /* Reducir padding superior y lateral */
   }
 
   .footer-inner {
     display: flex;       /* Cambiar grid por flex column */
     flex-direction: column;
-    gap: 3rem;
-    text-align: center;  /* Centrar textos del footer */
+    gap: 2.25rem;
+    text-align: left;
   }
-  
-  .footer-contact ul li {
-     /* Asegura que los items estén centrados o alineados a la izquierda según prefieras */
-     display: flex;
-     flex-direction: column;
-     align-items: center; 
+
+  .footer-contact li {
+    margin-bottom: 0.9rem;
+  }
+
+  .footer-contact span {
+    font-size: 0.65rem;
+    margin-bottom: 0.15rem;
+  }
+
+  .footer-contact a {
+    font-size: 0.95rem;
+    line-height: 1.25;
+    word-break: break-word;
+  }
+
+  .footer-bottom {
+    font-size: 0.75rem;
+    line-height: 1.3;
   }
 }
 

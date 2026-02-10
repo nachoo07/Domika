@@ -19,28 +19,6 @@
   width: 150px;
 }
 
-.nav-contact-icons {
-  display: flex;
-  gap: 1.1rem;
-  align-items: center;
-}
-
-.social-icon-header {
-  color: var(--domika-black);
-  background: var(--domika-cream);
-  border-radius: 50%;
-  padding: 7px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
-  box-shadow: 0 1px 6px 0 rgba(0,0,0,0.04);
-}
-.social-icon-header:hover {
-  background: var(--domika-black);
-  color: var(--domika-cream);
-}
-
 .menu-toggle {
   border: none;
   background: none;

@@ -34,10 +34,6 @@
 /* Ajustes Mobile */
 @media (max-width: 600px) {
   .about-fullimg {
-    height: 100vh;       /* En celular ocupa toda la pantalla */
-  }
-
-  .img-about {
-    object-fit: fill;   /* 'cover' suele verse mejor que 'fill' (estirado) en móviles modernos, pero puedes dejar fill si prefieres */
+    display: none;
   }
 }

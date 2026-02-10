@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Domika — Agencia Creativa</title>
+  <title>Domika — Trabajos</title>
   <link rel="icon" type="image/png" href="assets/img/logo/favicon.webp">
 
   <!-- CSS -->
@@ -12,12 +12,11 @@
   <link rel="stylesheet" href="assets/css/modal/modal.css">
   <link rel="stylesheet" href="assets/css/layout.css">
   <link rel="stylesheet" href="assets/css/componets.css">
-  <link rel="stylesheet" href="assets/css/hero/hero.css">
-  <link rel="stylesheet" href="assets/css/work/work.css">
-  <link rel="stylesheet" href="assets/css/servicios/services.css">
-  <link rel="stylesheet" href="assets/css/about/about.css">
   <link rel="stylesheet" href="assets/css/header/header.css">
   <link rel="stylesheet" href="assets/css/footer/footer.css">
+  <link rel="stylesheet" href="assets/css/work/work.css">
+  <link rel="stylesheet" href="assets/css/workPage/workpage.css">
+
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
@@ -28,10 +27,10 @@
   <header class="header">
     <nav class="nav">
       <div class="nav-left">
-        <img src="assets/img/logo/logo-4 - Editado.webp" alt="Domika" class="logo-img">
+        <a href="index.html#home" aria-label="Ir al inicio">
+          <img src="assets/img/logo/logo-4 - Editado.webp" alt="Domika" class="logo-img">
+        </a>
       </div>
-     
-      <!-- Botón menú mobile -->
       <button class="menu-toggle" aria-label="Abrir menú">
         <span class="menu-icon">
           <span class="bar"></span>
@@ -43,7 +42,7 @@
   </header>
 
   <!-- MODAL FULLSCREEN MENU -->
-  <div id="fullscreen-modal" class="fullscreen-modal" aria-hidden="true">
+   <div id="fullscreen-modal" class="fullscreen-modal" aria-hidden="true">
     <button class="close-modal" aria-label="Cerrar menú">×</button>
     <div class="modal-content">
       <nav class="modal-nav">
@@ -97,96 +96,25 @@
   </div>
 
   <main>
-    <!-- HERO -->
-    <section id="home" class="hero-agency">
-      <video class="hero-video" autoplay muted loop playsinline>
-        <source src="assets/videos/works/_Campaña San Valentinbalance - Atiza.mp4" type="video/mp4">
-      </video>
-      <div class="hero-overlay"></div>
-      <div class="hero-content">
-        <img src="assets/img/hero/logo-blanco-1 - Editado.webp" alt="Domika logo" class="hero-logo-title"
-          style="max-width: 620px; width: 90vw; height: auto; display: block; margin: 0 auto;">
-      </div>
-    </section>
-
-    <!-- ABOUT -->
-    <section id="about" class="about-fullimg">
-      <picture>
-        <source media="(max-width: 600px)" srcset="assets/img/about/LANDING-02.webp">
-        <img class="img-about" src="assets/img/about/LANDING-10 (1).webp" alt="Sobre nosotros Domika">
-      </picture>
-    </section>
-
-    <!-- SERVICES -->
-    <section id="services" class="services">
-
-      <!-- Header editorial -->
-      <div class="services-header">
-        <h2>Servicios</h2>
+    <section class="work-page">
+      <div class="work-page-intro">
+        <p class="work-page-eyebrow">Portfolio</p>
+        <h1>Trabajos</h1>
+        <div style="margin-top: 1.25rem;">
+          <a class="works-back-link" href="index.html#work">Volver a inicio</a>
+        </div>
       </div>
 
-      <!-- Servicios -->
-      <div class="services-list">
-        <article class="service-item">
-          <h3>Storytelling & Branding</h3>
-          <p>
-            Construimos el concepto madre de la marca y lo
-            transformamos en identidad, relato y sistema visual.
-          </p>
-        </article>
+      <div class="work-page-grid">
 
-        <article class="service-item">
-          <h3>Campañas Publicitarias Creativas</h3>
-          <p>
-            Ideas claras para lanzamientos, fechas clave o cambios
-            de etapa. Campañas pensadas para destacar y posicionar.
-          </p>
-        </article>
-
-        <article class="service-item">
-          <h3>Meta Ads & Google Ads</h3>
-          <p>
-            Planificación, ejecución y optimización con foco en
-            resultados medibles y decisiones basadas en datos.
-          </p>
-        </article>
-        <article class="service-item">
-          <h3>Diseño Gráfico</h3>
-          <p>
-            Diseño con criterio estético, sensibilidad y personalidad.
-            Cada pieza representa fielmente a la marca.
-          </p>
-        </article>
-        <article class="service-item">
-          <h3>Gestión de Redes Sociales</h3>
-          <p>
-            Contenidos pensados para sostener una comunicación clara,
-            coherente y consistente en el tiempo.
-          </p>
-        </article>
-      </div>
-    </section>
-
-    <!-- WORK -->
-    <section id="work" class="work">
-
-      <div class="work-header">
-        <h2>Trabajos</h2>
-      </div>
-      <div class="work-grid">
-        <article class="work-item work-item--stack-top">
+        <article class="work-item work-item--tall">
           <div class="work-media">
             <img src="assets/img/works/AMBORIGEN2-10.webp" alt="Amborigen">
           </div>
           <div class="work-title">Amborigen</div>
         </article>
-        <article class="work-item work-item--stack-bottom">
-          <div class="work-media">
-            <img src="assets/img/works/FIIHII-37.webp" alt="Proyecto Domika">
-          </div>
-          <div class="work-title">Fiihii</div>
-        </article>
-        <article class="work-item work-item--tall-left">
+
+        <article class="work-item work-item--video">
           <div class="work-media">
             <video data-lazy-video autoplay muted loop playsinline preload="none">
               <source data-src="assets/videos/works/Falci-balance.mp4" type="video/mp4">
@@ -194,7 +122,15 @@
           </div>
           <div class="work-title">Falci</div>
         </article>
-        <article class="work-item work-item--tall-right">
+
+        <article class="work-item">
+          <div class="work-media">
+            <img src="assets/img/works/FIIHII-37.webp" alt="Fiihii">
+          </div>
+          <div class="work-title">Fiihii</div>
+        </article>
+
+        <article class="work-item work-item--video">
           <div class="work-media">
             <video data-lazy-video autoplay muted loop playsinline preload="none">
               <source data-src="assets/videos/works/hero-balance-2.mp4" type="video/mp4">
@@ -202,25 +138,82 @@
           </div>
           <div class="work-title">Andaremos</div>
         </article>
-      </div>
 
-      <div class="work-actions">
-        <a class="work-cta" href="trabajos.html">Ver más trabajos</a>
-      </div>
+        <article class="work-item">
+          <div class="work-media">
+            <img src="assets/img/works/PLACAS-10.webp" alt="Placas">
+          </div>
+        </article>
 
+        <article class="work-item">
+          <div class="work-media">
+            <img src="assets/img/works/PLACAS-09 (1).webp" alt="Placas">
+          </div>
+        </article>
+
+        <article class="work-item work-item--tall">
+          <div class="work-media">
+            <img src="assets/img/works/POSTS-03.webp" alt="Posts">
+          </div>
+        </article>
+
+        <article class="work-item work-item--video">
+          <div class="work-media">
+            <video data-lazy-video autoplay muted loop playsinline preload="none">
+              <source data-src="assets/videos/works/_ vivis al palo_ - alpalo .mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="work-title">Al palo</div>
+        </article>
+
+        <article class="work-item">
+          <div class="work-media">
+            <img src="assets/img/works/SEPTEMBER-38 - copia.webp" alt="Editorial">
+          </div>
+        </article>
+
+        <article class="work-item work-item--video">
+          <div class="work-media">
+            <video data-lazy-video autoplay muted loop playsinline preload="none">
+              <source data-src="assets/videos/works/Tratamiento Despigmentante-balance  - Clinic.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="work-title">Clinic</div>
+        </article>
+
+        <article class="work-item">
+          <div class="work-media">
+            <img src="assets/img/works/POSTS MAY-11.webp" alt="Posts May">
+          </div>
+        </article>
+
+        <article class="work-item">
+          <div class="work-media">
+            <img src="assets/img/works/POSTS MAYy-10.webp" alt="Posts May">
+          </div>
+        </article>
+
+        <article class="work-item">
+          <div class="work-media">
+            <img src="assets/img/works/WhatsApp Image 2025-04-25 at 21.26.49 (4).webp" alt="Proyecto">
+          </div>
+        </article>
+
+        <article class="work-item">
+          <div class="work-media">
+            <img src="assets/img/works/WhatsApp Image 2025-04-28 at 15.22.24.webp" alt="Proyecto">
+          </div>
+        </article>
+      </div>
     </section>
   </main>
+
   <!-- FOOTER -->
   <footer class="footer" id="contact">
-
     <div class="footer-inner">
-
-      <!-- CTA -->
       <div class="footer-cta">
         <h2>Trabajemos juntos</h2>
       </div>
-
-      <!-- Contact -->
       <div class="footer-contact">
         <ul>
           <li>
@@ -233,8 +226,7 @@
           </li>
           <li>
             <span>Instagram</span>
-            <a href="https://www.instagram.com/domika.agency?igsh=MXM0c3A5OHE2dHlvMQ=="
-              target="_blank">@domika.agency</a>
+            <a href="https://www.instagram.com/domika.agency?igsh=MXM0c3A5OHE2dHlvMQ==" target="_blank">@domika.agency</a>
           </li>
           <li>
             <span>LinkedIn</span>
@@ -242,16 +234,14 @@
           </li>
         </ul>
       </div>
-
     </div>
-
     <div class="footer-bottom">
       <p>© Domika</p>
     </div>
-
   </footer>
 
   <script src="assets/js/main.js"></script>
 </body>
 
 </html>
+

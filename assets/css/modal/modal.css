@@ -115,6 +115,46 @@ body {
   gap: 2.5rem;
   padding-bottom: 3vw;
 }
+
+/* Variante usada en trabajos.html */
+.fullscreen-modal .modal-aside {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  padding-left: 3vw;
+  color: #fff;
+  gap: 2.5rem;
+  padding-bottom: 3vw;
+}
+
+.fullscreen-modal .modal-aside h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.fullscreen-modal .modal-aside p {
+  font-size: 1.1rem;
+  margin: 0;
+  opacity: 0.85;
+}
+
+.fullscreen-modal .modal-aside a {
+  color: #fff;
+  font-size: inherit;
+  margin-right: 0;
+  vertical-align: baseline;
+  transition: color 0.2s;
+  text-decoration: none;
+}
+
+.fullscreen-modal .modal-aside a:hover {
+  color: var(--primary, #ff3c00);
+}
 .fullscreen-modal .modal-info h3 {
   font-size: 1.2rem;
   font-weight: 700;
@@ -142,7 +182,8 @@ body {
     flex-direction: column;
   }
   .fullscreen-modal .modal-nav,
-  .fullscreen-modal .modal-info {
+  .fullscreen-modal .modal-info,
+  .fullscreen-modal .modal-aside {
     align-items: center;
     padding-left: 0;
     text-align: center;
@@ -168,6 +209,10 @@ body {
 }
 
 .modal-info {
+  gap: 2rem;
+}
+
+.modal-aside {
   gap: 2rem;
 }
   

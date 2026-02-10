@@ -1,94 +1,59 @@
-// Mostrar más/menos trabajos en móvil, cargando dinámicamente los extras
-document.addEventListener('DOMContentLoaded', function() {
-  var btnMore = document.querySelector('.work-show-more');
-  var btnLess = document.querySelector('.work-show-less');
-  var more = document.querySelector('.work-more-items');
-  var loaded = false;
-  var extraWorks = `
-    <article class="work-item square">
-      <img src="assets/img/works/PLACAS-10.webp" alt="Proyecto Domika">
-    </article>
-    <article class="work-item square">
-      <img src="assets/img/works/PLACAS-09 (1).webp" alt="Proyecto Domika">
-    </article>
-    <article class="work-item square">
-      <img src="assets/img/works/POSTS-03.webp" alt="Proyecto Domika">
-    </article>
-    <article class="work-item vertical">
-      <div class="work-media">
-        <video autoplay muted loop playsinline preload="none">
-          <source src="assets/videos/works/_ vivis al palo_ - alpalo .mp4" type="video/mp4">
-        </video>
-      </div>
-      <div class="work-title">Al palo</div>
-    </article>
-    <article class="work-item square">
-      <img src="assets/img/works/SEPTEMBER-38 - copia.webp" alt="Proyecto Domika">
-    </article>
-    <article class="work-item vertical">
-      <div class="work-media">
-        <video autoplay muted loop playsinline preload="none">
-          <source src="assets/videos/works/Tratamiento Despigmentante-balance  - Clinic.mp4" type="video/mp4">
-        </video>
-      </div>
-      <div class="work-title">Clinic</div>
-    </article>
-    <article class="work-item square">
-      <img src="assets/img/works/WhatsApp Image 2025-04-25 at 21.26.49 (4).webp" alt="Proyecto Domika">
-    </article>
-    <article class="work-item square">
-      <img src="assets/img/works/WhatsApp Image 2025-04-28 at 15.22.24.webp" alt="Proyecto Domika">
-    </article>
-  `;
-  function isMobile() {
-    return window.matchMedia('(max-width: 900px)').matches;
+// Lazy-load + play/pause videos by visibility (reduces initial load)
+document.addEventListener('DOMContentLoaded', () => {
+  const lazyVideos = Array.from(document.querySelectorAll('video[data-lazy-video]'));
+  if (!lazyVideos.length) return;
+
+  const prefersReducedMotion = window.matchMedia
+    ? window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    : false;
+
+  const loadVideo = (video) => {
+    if (video.dataset.loaded === '1') return;
+    const sources = Array.from(video.querySelectorAll('source[data-src]'));
+    sources.forEach((source) => {
+      if (!source.getAttribute('src')) source.setAttribute('src', source.dataset.src);
+    });
+    video.load();
+    video.dataset.loaded = '1';
+  };
+
+  const safePlay = (video) => {
+    if (prefersReducedMotion) return;
+    if (!video.autoplay) return;
+    const p = video.play();
+    if (p && typeof p.catch === 'function') p.catch(() => {});
+  };
+
+  const safePause = (video) => {
+    try {
+      video.pause();
+    } catch {}
+  };
+
+  if (!('IntersectionObserver' in window)) {
+    lazyVideos.forEach((video) => {
+      loadVideo(video);
+      safePlay(video);
+    });
+    return;
   }
-  function showAllDesktop() {
-    if (more && !loaded) {
-      more.innerHTML = extraWorks;
-      more.classList.add('active');
-      if(btnMore) btnMore.style.display = 'none';
-      if(btnLess) btnLess.style.display = 'none';
-      loaded = true;
-    }
-  }
-  function setupMobile() {
-    if(btnMore && btnLess && more) {
-      btnMore.style.display = 'block';
-      btnLess.style.display = 'none';
-      more.classList.remove('active');
-      more.innerHTML = '';
-      loaded = false;
-      btnMore.addEventListener('click', function() {
-        if(!loaded) {
-          more.innerHTML = extraWorks;
-          loaded = true;
-        }
-        more.classList.add('active');
-        btnMore.style.display = 'none';
-        btnLess.style.display = 'block';
-      });
-      btnLess.addEventListener('click', function() {
-        more.classList.remove('active');
-        btnMore.style.display = 'block';
-        btnLess.style.display = 'none';
-        // Scroll hacia arriba para ver los primeros trabajos
-        const workSection = document.querySelector('.work');
-        if(workSection) {
-          workSection.scrollIntoView({behavior: 'smooth', block: 'start'});
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        const video = entry.target;
+        if (entry.isIntersecting) {
+          loadVideo(video);
+          safePlay(video);
+        } else {
+          safePause(video);
         }
       });
-    }
-  }
-  function handleResize() {
-    if (isMobile()) {
-      setupMobile();
-    } else {
-      showAllDesktop();
-    }
-  }
-  handleResize();
-  window.addEventListener('resize', handleResize);
+    },
+    { root: null, rootMargin: '200px 0px', threshold: 0.05 }
+  );
+
+  lazyVideos.forEach((video) => observer.observe(video));
 });
 // Animación de aparición lateral para service-item
 document.addEventListener('DOMContentLoaded', function () {

@@ -18,8 +18,9 @@
      DOMIKA — TIPOGRAFÍAS
   =============================== */
 
-  --font-title: 'Canela Condensed';
-  --font-body: 'Poppins';
+  --font-title: 'Cormorant Garamond', serif;
+  --font-body: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  --font-title-alt: 'the nautical';
 
   /* ===============================
      DOMIKA — ESCALA TIPOGRÁFICA
@@ -35,6 +36,5 @@
   --lh-normal: 1.6;
   --lh-relaxed: 1.75;
 }
-
 
 
