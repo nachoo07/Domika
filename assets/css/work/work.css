@@ -19,11 +19,11 @@
   letter-spacing: -0.02em;
   margin: 0;
   color: var(--domika-black);
-  max-width: 2100px;
+  max-width: 1050px;
 }
 
 .work-grid {
-  max-width: 2100px;
+  max-width: 1050px;
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -84,7 +84,6 @@
 
 .work-item.square .work-media {
   aspect-ratio: 1 / 1;
-
 }
 
 .work-item img,
@@ -104,10 +103,6 @@
 .work-item:hover video {
   transform: scale(1.06);
   filter: blur(2px) brightness(0.75);
-}
-
-.work-item--stack-bottom:hover img {
-  transform: none;
 }
 
 .work-title {
@@ -131,7 +126,7 @@
 }
 
 .work-actions {
-  max-width: 1100px;
+  max-width: 1050px;
   margin: 2rem auto 0;
   display: flex;
   justify-content: center;
@@ -143,20 +138,22 @@
   justify-content: center;
   padding: 0.9rem 1.4rem;
   border-radius: 999px;
-  border: 1px solid var(--domika-black);
-  color: var(--domika-black);
-  background: transparent;
+  border: 1px solid var(--domika-red);
+  color: #fff;
+  background: var(--domika-red);
   text-decoration: none;
   font-family: var(--font-body);
   text-transform: uppercase;
   letter-spacing: 0.08em;
   font-size: 0.85rem;
-  transition: background 0.2s ease, color 0.2s ease;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+  box-shadow: 0 10px 24px rgba(193, 58, 56, 0.2);
 }
 
 .work-cta:hover {
-  background: var(--domika-black);
-  color: #fff;
+  background: transparent;
+  color: var(--domika-red);
+  transform: translateY(-1px);
 }
 
 @media (max-width: 900px) {

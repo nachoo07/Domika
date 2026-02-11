@@ -6,6 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Domika — Agencia Creativa</title>
   <link rel="icon" type="image/png" href="assets/img/logo/favicon.webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <!-- CSS -->
   <link rel="stylesheet" href="assets/css/variables.css?v=20260210">
@@ -28,7 +30,7 @@
   <header class="header">
     <nav class="nav">
       <div class="nav-left">
-        <img src="assets/img/logo/logo-4 - Editado.webp" alt="Domika" class="logo-img">
+        <img src="assets/img/logo/logo-4 - Editado.webp" alt="Domika" class="logo-img" decoding="async">
       </div>
      
       <!-- Botón menú mobile -->
@@ -105,6 +107,7 @@
       <div class="hero-overlay"></div>
       <div class="hero-content">
         <img src="assets/img/hero/logo-blanco-1 - Editado.webp" alt="Domika logo" class="hero-logo-title"
+          fetchpriority="high" decoding="async"
           style="max-width: 620px; width: 90vw; height: auto; display: block; margin: 0 auto;">
       </div>
     </section>
@@ -112,8 +115,10 @@
     <!-- ABOUT -->
     <section id="about" class="about-fullimg">
       <picture>
-        <source media="(max-width: 600px)" srcset="assets/img/about/LANDING-02.webp">
-        <img class="img-about" src="assets/img/about/LANDING-10 (1).webp" alt="Sobre nosotros Domika">
+        <source media="(min-width: 1201px)" srcset="assets/img/about/LANDING-10-2000.jpg">
+        <source media="(min-width: 601px)" srcset="assets/img/about/LANDING-10 (1).webp">
+        <img class="img-about" src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" alt="Sobre nosotros Domika"
+          loading="lazy" decoding="async" fetchpriority="low">
       </picture>
     </section>
 
@@ -176,13 +181,13 @@
       <div class="work-grid">
         <article class="work-item work-item--stack-top">
           <div class="work-media">
-            <img src="assets/img/works/AMBORIGEN2-10.webp" alt="Amborigen">
+            <img src="assets/img/works/AMBORIGEN2-10.webp" alt="Amborigen" loading="lazy" decoding="async">
           </div>
           <div class="work-title">Amborigen</div>
         </article>
         <article class="work-item work-item--stack-bottom">
           <div class="work-media">
-            <img src="assets/img/works/FIIHII-37.webp" alt="Proyecto Domika">
+            <img src="assets/img/works/FIIHII-37.webp" alt="Proyecto Domika" loading="lazy" decoding="async">
           </div>
           <div class="work-title">Fiihii</div>
         </article>

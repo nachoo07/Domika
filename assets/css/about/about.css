@@ -3,13 +3,13 @@
 .about-fullimg {
   position: relative;
   width: 100vw;          /* Ancho total de la ventana */
-  height: 90vh;
+  height: auto;
   left: 50%;
   right: 50%;
   margin-left: -50vw;
   margin-right: -50vw;
   max-width: none;       /* Ignoramos el límite del contenedor padre */
-  overflow: hidden;
+  overflow: visible;
   background: #F2EDE6; /* Cambia este color por el que prefieras */
   padding-top: 80px;    /* Espacio entre el borde superior y la imagen */
 
@@ -19,16 +19,15 @@
 .about-fullimg picture {
   display: block;
   width: 100%;
-  height: 100%;
+  height: auto;
+  line-height: 0;
 }
 
 /* Imagen real */
 .img-about {
   display: block;
   width: 100%;
-  height: 100%;
-  object-fit: cover;     /* Mantiene la proporción sin deformar */
-  object-position: center;
+  height: auto;
 }
 
 /* Ajustes Mobile */

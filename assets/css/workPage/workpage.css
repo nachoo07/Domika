@@ -50,6 +50,8 @@
   width: 100%;
   margin: 0 0 0.8rem;
   break-inside: avoid;
+  content-visibility: auto;
+  contain-intrinsic-size: 320px 240px;
 }
 
 .work-item--wide .work-media {
