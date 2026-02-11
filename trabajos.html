@@ -10,14 +10,14 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <!-- CSS -->
-  <link rel="stylesheet" href="assets/css/variables.css?v=20260211">
-  <link rel="stylesheet" href="assets/css/modal/modal.css?v=20260211">
-  <link rel="stylesheet" href="assets/css/layout.css?v=20260211">
-  <link rel="stylesheet" href="assets/css/componets.css?v=20260212">
-  <link rel="stylesheet" href="assets/css/header/header.css?v=20260211">
-  <link rel="stylesheet" href="assets/css/footer/footer.css?v=20260211">
-  <link rel="stylesheet" href="assets/css/work/work.css?v=20260212">
-  <link rel="stylesheet" href="assets/css/workPage/workpage.css?v=20260212">
+  <link rel="stylesheet" href="assets/css/variables.css?v=20260212">
+  <link rel="stylesheet" href="assets/css/modal/modal.css?v=20260212">
+  <link rel="stylesheet" href="assets/css/layout.css?v=20260212">
+  <link rel="stylesheet" href="assets/css/componets.css?v=20260213">
+  <link rel="stylesheet" href="assets/css/header/header.css?v=20260212">
+  <link rel="stylesheet" href="assets/css/footer/footer.css?v=20260212">
+  <link rel="stylesheet" href="assets/css/work/work.css?v=20260213">
+  <link rel="stylesheet" href="assets/css/workPage/workpage.css?v=20260213">
 
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
@@ -50,7 +50,7 @@
       <nav class="modal-nav">
         <ul>
           <li><a href="#home" class="active">Inicio</a></li>
-          <li><a href="#about">Sobre Nosotros</a></li>
+          <li class="modal-hide-mobile"><a href="#about">Sobre Nosotros</a></li>
           <li><a href="#services">Servicios</a></li>
           <li><a href="#work">Trabajos</a></li>
           <li><a href="#contact">Contacto</a></li>
@@ -132,14 +132,16 @@
           <div class="work-title-work">Fiihii</div>
         </article>
 
-        <article class="work-item work-item--video">
+          <article class="work-item work-item--video">
           <div class="work-media">
             <video data-lazy-video autoplay muted loop playsinline preload="none">
-              <source data-src="assets/videos/works/_campaña san Valentinbalance - atiza.mp4" type="video/mp4">
+              <source src="assets/videos/works/hero-balance-2.mp4" type="video/mp4">
             </video>
           </div>
-          <div class="work-title-work">Atiza</div>
+        
+          <div class="work-title-work work-title--mobile">Andaremos</div>
         </article>
+
 
         <article class="work-item">
           <div class="work-media">
@@ -244,7 +246,7 @@
     </div>
   </footer>
 
-  <script src="assets/js/main.js?v=20260212"></script>
+  <script src="assets/js/main.js?v=20260213"></script>
 </body>
 
 </html>

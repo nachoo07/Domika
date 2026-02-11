@@ -166,6 +166,7 @@ body {
   font-size: 1.1rem;
   margin: 0;
   opacity: 0.85;
+  text-decoration: none;
 }
 .fullscreen-modal .modal-info a {
   color: #fff;
@@ -190,6 +191,12 @@ body {
   }
   .fullscreen-modal .modal-nav ul {
     align-items: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .fullscreen-modal .modal-hide-mobile {
+    display: none;
   }
 }
 

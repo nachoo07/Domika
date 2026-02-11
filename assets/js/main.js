@@ -55,6 +55,42 @@ document.addEventListener('DOMContentLoaded', () => {
 
   lazyVideos.forEach((video) => observer.observe(video));
 });
+
+// Responsive video sources (<source media="...">)
+// Fuerza re-evaluación al cambiar entre mobile/desktop (resize/orientación)
+document.addEventListener('DOMContentLoaded', () => {
+  if (!window.matchMedia) return;
+
+  const responsiveVideos = Array.from(document.querySelectorAll('video')).filter((video) =>
+    video.querySelector('source[media]')
+  );
+
+  if (!responsiveVideos.length) return;
+
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const mq = window.matchMedia('(max-width: 768px)');
+
+  const safePlay = (video) => {
+    if (prefersReducedMotion) return;
+    if (!video.autoplay) return;
+    const p = video.play();
+    if (p && typeof p.catch === 'function') p.catch(() => {});
+  };
+
+  const reloadIfLoaded = (video) => {
+    const isLazy = video.hasAttribute('data-lazy-video');
+    if (isLazy && video.dataset.loaded !== '1') return;
+
+    const wasPlaying = !video.paused;
+    video.load();
+    if (wasPlaying) safePlay(video);
+  };
+
+  const onChange = () => responsiveVideos.forEach(reloadIfLoaded);
+
+  if (typeof mq.addEventListener === 'function') mq.addEventListener('change', onChange);
+  else if (typeof mq.addListener === 'function') mq.addListener(onChange);
+});
 // Animación de aparición lateral para service-item
 document.addEventListener('DOMContentLoaded', function () {
   const serviceItems = document.querySelectorAll('.service-item');
