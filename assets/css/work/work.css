@@ -121,6 +121,20 @@
   background: rgba(0, 0, 0, 0.15);
 }
 
+.work-title--mobile {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .work-title--desktop {
+    display: none;
+  }
+
+  .work-title--mobile {
+    display: flex;
+  }
+}
+
 .work-item:hover .work-title {
   opacity: 1;
 }

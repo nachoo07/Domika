@@ -99,6 +99,7 @@ body {
   transition: color 0.2s;
   line-height: 1.1;
   font-family: var(--font-title);
+  text-decoration: none;
 }
 .fullscreen-modal .modal-nav a.active,
 .fullscreen-modal .modal-nav a:hover {
@@ -149,7 +150,6 @@ body {
   margin-right: 0;
   vertical-align: baseline;
   transition: color 0.2s;
-  text-decoration: none;
 }
 
 .fullscreen-modal .modal-aside a:hover {
